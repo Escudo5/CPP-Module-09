@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:06:46 by smarquez          #+#    #+#             */
-/*   Updated: 2025/11/04 16:38:45 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/05 13:29:04 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <map>
 #include <string>
 #include <fstream>
+#include <cctype>
+#include <cstdlib>
 
 
 
