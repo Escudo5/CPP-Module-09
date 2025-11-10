@@ -6,13 +6,11 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:28:28 by smarquez          #+#    #+#             */
-/*   Updated: 2025/11/10 17:11:25 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:18:03 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-
-
 
 bool validParse(const std::string &str)
 {
@@ -53,7 +51,7 @@ int main (int argc, char **argv)
 {
     if (argc < 2)
     {
-        std::cerr << "Invalid argument number" << std::endl;
+        std::cerr << "Error" << std::endl;
         return 1;
     }
     
@@ -64,13 +62,13 @@ int main (int argc, char **argv)
     {
         if (!validParse(argv[i]))
         {
-            std::cerr << "Parse error" << std::endl;
+            std::cerr << "Error" << std::endl;
             return 1;
         }
         int num = std::atoi(argv[i]);
         if (num <= 0)
         {
-            std::cerr << "Invalid number" << std::endl;
+            std::cerr << "Error" << std::endl;
             return 1;
         }
         vec.push_back(num);
