@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:49:04 by smarquez          #+#    #+#             */
-/*   Updated: 2025/11/10 16:28:07 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:00:07 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,6 @@
     
 // }
 
-void PmergeMe::sortDeque(std::deque<int> &data)
-{
-    
-}
-
-void PmergeMe::sortVector(std::vector<int> &data)
-{
-    
-}
 size_t PmergeMe::binarySearchVector(const std::vector<int> &data, int value)
 {
     size_t left = 0;
@@ -110,7 +101,7 @@ void PmergeMe::mergeInsertSortVector(std::vector<int> &data)
     
     if (data.size() % 2 != 0)
     {
-        std::cout << "Fuck, lonely number in the array, need to keep coding" << std::endl;
+        // std::cout << "Fuck, lonely number in the array, need to keep coding" << std::endl;
         hasLonely = true;
         lonely = data[data.size() - 1];
     }
@@ -120,7 +111,7 @@ void PmergeMe::mergeInsertSortVector(std::vector<int> &data)
     
     for (size_t i = 0; i < pairs.size(); i++)
     {
-        std::pair<int, int> par = pairs[i];
+        // std::pair<int, int> par = pairs[i];
         smaller.push_back(pairs[i].first);
         larger.push_back(pairs[i].second);
     }
@@ -193,7 +184,7 @@ void PmergeMe::mergeInsertSortDeque(std::deque<int> &data)
     
     if (data.size() % 2 != 0)
     {
-        std::cout << "Fuck, lonely number in the array, need to keep coding" << std::endl;
+        // std::cout << "Fuck, lonely number in the array, need to keep coding" << std::endl;
         hasLonely = true;
         lonely = data[data.size() - 1];
     }
@@ -203,7 +194,7 @@ void PmergeMe::mergeInsertSortDeque(std::deque<int> &data)
     
     for (size_t i = 0; i < pairs.size(); i++)
     {
-        std::pair<int, int> par = pairs[i];
+        // std::pair<int, int> par = pairs[i];
         smaller.push_back(pairs[i].first);
         larger.push_back(pairs[i].second);
     }
@@ -224,3 +215,25 @@ void PmergeMe::mergeInsertSortDeque(std::deque<int> &data)
         binaryInsertDeque(result, lonely);
     data = result;
 }
+
+// void PmergeMe::printVector(std::vector<int> &vec, const std::string &label)
+// {
+//     std::cout << label;
+//     size_t limit = vec.size();
+//     bool showElipsis = false;
+
+//     if (vec.size() > 10)
+//     {
+//         limit = 5;
+//         showElipsis = true;
+//     }
+    
+//     for (size_t i = 0; i < limit; i++)
+//     {
+//         std::cout << vec[i];
+//         if (i < limit - 1)
+//             std::cout << " " ;
+//     }
+//     if (showElipsis)
+//         std::cout << " [...] " << std::endl;
+// }
