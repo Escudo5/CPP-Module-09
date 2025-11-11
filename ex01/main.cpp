@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:25:39 by smarquez          #+#    #+#             */
-/*   Updated: 2025/11/05 17:45:31 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/11 13:46:40 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int main(int argc, char **argv)
 
     try 
     {
-        
         RPN test;
         int resutl = test.evaluate(argv[1]);
         std::cout << resutl << std::endl;

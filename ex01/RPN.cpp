@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:25:24 by smarquez          #+#    #+#             */
-/*   Updated: 2025/11/05 17:51:57 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/11 13:44:45 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ RPN::RPN()
     
 }
 
-// RPN::RPN(const RPN &copy)
-// {
+RPN::RPN(const RPN &copy)
+{
 
-// }
+}
 
-// RPN &RPN::operator=(const RPN &copy)
-// {
+RPN &RPN::operator=(const RPN &copy)
+{
     
-// }
+}
 
 RPN::~RPN()
 {

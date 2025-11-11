@@ -6,7 +6,7 @@
 /*   By: smarquez <smarquez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:33:32 by smarquez          #+#    #+#             */
-/*   Updated: 2025/11/05 15:03:12 by smarquez         ###   ########.fr       */
+/*   Updated: 2025/11/11 14:09:37 by smarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,16 @@ bool BitcoinExchange::parseDatabaseLine(const std::string &line, std::string &da
     return true;
 }
 
+bool BitcoinExchange::isValidDay(int month, int day)
+{
+    int daysInMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int maxDays = daysInMonth[month - 1];
+    if (month > 12 || month < 1)
+        return false;
+    if (day < 1 || day > maxDays)
+        return false;
+    return true;
+}
 bool BitcoinExchange::isValidDate(const std::string &date)const
 {
     if (date.length() != 10)
@@ -64,14 +74,12 @@ bool BitcoinExchange::isValidDate(const std::string &date)const
     int month = std::atoi(date.substr(5, 2).c_str());
     int day = std::atoi(date.substr(8, 2).c_str());
 
-
     if (year < 1000 || year > 9999)
-        return false;    
-    if (month > 12 || month < 1)
         return false;
-    if (day > 31 || day < 1)
+    if (!isValidDay(month, day))
         return false;
     return true;
+    
 }
 
 bool BitcoinExchange::isValidValue(double value)const
@@ -129,14 +137,14 @@ void BitcoinExchange::calculateAndDisplay(const std::string &date, double value)
 
 void BitcoinExchange::processInput(const std::string &filename)
 {
-    std::ifstream file (filename.c_str());
+    std::ifstream file (filename.c_str()); //open
     if (!file.is_open())
     {
         std::cerr << "Error: could not open file" << std::endl;
         return;
     }
     std::string line;
-    std::getline(file, line);
+    std::getline(file, line); //me salto la primera linea (header)
     
     while (std::getline(file, line))
     {
@@ -149,7 +157,7 @@ void BitcoinExchange::processInput(const std::string &filename)
         }
         if (!isValidDate(date))
         {
-            std::cerr << "Error: bad input =>" << std::endl;
+            std::cerr << "Error: bad input =>" << date  <<  std::endl;
             continue;
         }
 
